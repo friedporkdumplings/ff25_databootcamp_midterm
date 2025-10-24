@@ -16,7 +16,9 @@ Note: Our original notebook includes interactive widgets for genre and recommend
 ## Project Overview
 
 This project explores global music-listening patterns based on data collected via the Last.fm API. Our goal was to conduct an exploratory data analysis to examine how music preferences vary across countries and genres. We also wanted to highlight how recommendation systems and tagging behavior affect the modern music landscape. By combining data from multiple API endpoints, we analyzed country-level trends, genre characteristics, and artist similarity connections, patterns regarding global and local parts of consumption.
+
 <img width="1384" height="790" alt="image" src="https://github.com/user-attachments/assets/da3cdb4d-e208-49cb-bdd5-e723dada7b08" />
+
 *(World map or bar chart comparing top artists by country)*
 
 Our project demonstrates practical use of Python-based data science workflows, including API integration, data cleaning, visualization, and analysis. Throughout this notebook, we incorporated key Python libraries (pandas, matplotlib, seaborn, requests, and ipywidgets) to support both our analysis objectives and also for interactivity.
@@ -45,7 +47,9 @@ To ensure data variety, we selected twelve countries across multiple continents,
 In the first part of our analysis, we focused on understanding listening trends across countries. Using data from the geo.getTopArtists endpoint, we visualized the most popular artists by listener count. The results featured an interesting balance between global and regional preferences. Artists like Taylor Swift, The Weeknd, and Kendrick Lamar consistently ranked among the top in multiple countries, suggesting substantial international reach and universal appeal. Yet each country also exhibited local preferences, with domestic artists often dominating their respective charts.
 
 When we examined track-level data using geo.getTopTracks, an interesting pattern emerged: individual songs often cross borders more easily than their artists do. For example, a single hit song may gain international traction even if the artist is not a global household name.
+
 <img width="1381" height="790" alt="image" src="https://github.com/user-attachments/assets/efaf5d93-d614-4efd-89c2-a1f721feac16" />
+
 *(Bar chart of top tracks by country)*
 
 Overall, this part of our analysis highlights the duality of global music consumption. It appears that while the internet and streaming services have made international music more accessible than ever, cultural and linguistic preferences continue to shape what people listen to at home.
@@ -55,11 +59,15 @@ Overall, this part of our analysis highlights the duality of global music consum
 ## Artist Similarity and Recommendation Patterns
 
 In the next section, we analyzed artist relationships using the artist.getSimilar endpoint. By querying similar artists for top genre performers, we identified how frequently specific names appeared across different similarity lists. These artists, who appear multiple times, often act as "genre bridges," connecting diverse audiences through stylistic versatility. For example, Drake, The Weeknd, and Taylor Swift frequently surfaced across both pop and R&B or hip-hop lists, suggesting broad listener overlap.
+
 <img width="672" height="455" alt="image" src="https://github.com/user-attachments/assets/ebc74dfe-1276-435a-997f-234641fb7740" />
+
 *("Artists similar to Taylor Swift" bar chart)*
 
 These results led us to develop a frequency-based recommendation approach. Our custom function, get_recommended_artists_by_genre, counts how often each artist is recommended across several top artist lists. We then visualized these results using two main plots: a bar chart ranking the most frequently recommended artists, and a scatter plot comparing frequency to average similarity score. Artists who appear often and have high match scores are likely to be globally influential and algorithmically favored.
+
 <img width="1385" height="990" alt="image" src="https://github.com/user-attachments/assets/a3c7d61e-5ce0-4f0a-b002-5680e7b04a4b" />
+
 *(Frequency vs. average match score scatter plot)*
 
 The results confirm that recommendation systems tend to amplify already popular artists who blend multiple styles, further strengthening their dominance across genres. However, our research also identified niche artists who, despite lower frequency, had very high similarity scores, potentially indicating tightly connected communities around specific sounds.
@@ -69,7 +77,9 @@ The results confirm that recommendation systems tend to amplify already popular 
 ## Tag Distribution and Genre Overlap
 
 To explore how listeners categorize music, we collected the top tags associated with leading artists in six genres: pop, rock, hip-hop, electronic, jazz, and R&B. For each genre, the function get_top_tags_for_genre retrieved artist tags, aggregated their frequencies, and calculated the percentage distribution.
+
 <img width="1789" height="1180" alt="image" src="https://github.com/user-attachments/assets/68a1cc1f-77d7-478b-8dd0-238877c2d6f9" />
+
 *(Multi-panel bar charts showing tag distributions by genre)*
 
 The results reveal both distinctive genre identities and cross-genre overlap. Pop and R&B share tags like "pop," "female vocalists," and "R&B," while electronic music overlaps with pop and indie. Jazz remains the most distinct, consistently defined by "blues," "vocal jazz," and "soul." These tag patterns reflect how listeners perceive genre boundaries. These overlapping identifiers support the idea of the growing fluidity of genre in today's streaming era. As recommendation algorithms prioritize sound-based and contextual similarity, artists increasingly transcend the traditionally strict stylistic categories, thus leading to the rise of hybrid genres and crossover collaborations.
